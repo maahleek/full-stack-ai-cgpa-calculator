@@ -111,8 +111,8 @@ export default function TranscriptPage() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm print:border-0 print:shadow-none print:p-0">
-        <div className="flex items-start justify-between border-b border-slate-200 pb-4">
+      <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-8 print:border-0 print:shadow-none print:p-0">
+        <div className="flex flex-col gap-4 border-b border-slate-200 pb-4 sm:flex-row sm:items-start sm:justify-between sm:gap-0">
           <div>
             <h2 className="text-lg font-bold text-slate-900">{data.profile.name}</h2>
             <p className="text-sm text-slate-600">{data.profile.email}</p>
@@ -122,14 +122,14 @@ export default function TranscriptPage() {
               </p>
             )}
           </div>
-          <div className="text-right">
+          <div className="sm:text-right">
             <div className="text-2xl font-bold text-indigo-700">{data.overview.cgpa.toFixed(2)}</div>
             <div className="text-xs text-slate-500">CGPA · {SCALE_LABELS[scale]}</div>
             <div className="mt-1 text-sm font-medium text-slate-700">{data.overview.classification}</div>
           </div>
         </div>
 
-        <div className="mt-4 grid grid-cols-3 gap-4 text-sm">
+        <div className="mt-4 grid grid-cols-1 gap-4 text-sm sm:grid-cols-3">
           <div>
             <div className="text-slate-500">Total credits</div>
             <div className="font-semibold text-slate-900">{data.overview.totalCredits}</div>

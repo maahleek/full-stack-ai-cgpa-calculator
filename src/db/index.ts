@@ -15,6 +15,11 @@ export const pool =
   globalForDb.__arenaNextJsPostgresqlPool ??
   new Pool({
     connectionString: databaseUrl,
+    // Render's managed Postgres requires SSL for external connections (e.g. from
+    // our web service to the database over the public internet). Local Docker
+    // Postgres doesn't use SSL at all, so only enable this in production.
+    // rejectUnauthorized: false is the standard approach for Render/Heroku-style
+    // managed Postgres, which use certificates not in Node's default trusted CA list.
     ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : undefined,
   });
 
