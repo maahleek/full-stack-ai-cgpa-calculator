@@ -8,6 +8,14 @@ html, body {
   height: 100%;
 }
 
+html {
+  overflow-x: hidden;
+}
+
+body {
+  max-width: 100%;
+}
+
 body {
   background:
     radial-gradient(1200px 600px at 10% -10%, rgba(99, 102, 241, 0.12), transparent 60%),
