@@ -565,8 +565,8 @@ export default function SemesterDetailPage() {
           <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <h3 className="text-sm font-semibold text-slate-900">Grade distribution</h3>
             {pieData.length > 0 ? (
-              <div className="mt-3 h-52">
-                <ResponsiveContainer width="100%" height="100%">
+                <div className="mt-3 h-52 w-full overflow-hidden">
+                <ResponsiveContainer width="100%" height="100%" debounce={200}>
                   <PieChart>
                     <Pie
                       data={pieData}
@@ -594,8 +594,8 @@ export default function SemesterDetailPage() {
 
           <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <h3 className="text-sm font-semibold text-slate-900">Credits by difficulty</h3>
-            <div className="mt-3 h-40">
-              <ResponsiveContainer width="100%" height="100%">
+              <div className="mt-3 h-40 w-full overflow-hidden">
+              <ResponsiveContainer width="100%" height="100%" debounce={200}>
                 <BarChart data={barData}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
                   <XAxis dataKey="name" tick={{ fontSize: 11, fill: "#64748b" }} axisLine={false} tickLine={false} />
