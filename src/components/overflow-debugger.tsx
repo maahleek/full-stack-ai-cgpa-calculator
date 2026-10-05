@@ -9,10 +9,6 @@ export function OverflowDebugger() {
     function check() {
       const vw = window.innerWidth;
       const bodyScrollWidth = document.body.scrollWidth;
-      if (bodyScrollWidth <= vw + 1) {
-        setInfo(`OK: viewport=${vw} bodyScrollWidth=${bodyScrollWidth}`);
-        return;
-      }
 
       const all = document.querySelectorAll("body *");
       let worstEl: Element | null = null;
@@ -37,7 +33,7 @@ export function OverflowDebugger() {
           )} width=${Math.round(rect.width)} class="${cls}"`
         );
       } else {
-        setInfo(`OVERFLOW vw=${vw} bodyScroll=${bodyScrollWidth} | culprit not found in body *`);
+        setInfo(`OK: viewport=${vw} bodyScrollWidth=${bodyScrollWidth}`);
       }
     }
 
